@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>duck!</title>
+    <title>🦆 | duck!</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="field">
         <canvas id="canvas"></canvas>
-        <div id="toolbox">
-            <button onClick="undo_last()" type="button" class="button">undo</button>
-            <button onClick="clear_canvas()" type="button" class="button">clear</button>
+        <div class="toolbox">
+            <button onClick="undo_last()" type="button" class="button" id="undoB">undo</button>
+            <button onClick="clear_canvas()" type="button" class="button" id="clearB">clear</button>
 
             <div onClick="change_color(this)" class="color-field" style="background: red;"></div>
             <div onClick="change_color(this)" class="color-field" style="background: blue;"></div>
@@ -21,6 +21,13 @@
 
             <input onInput="draw_color = this.value" type="color" class="color-picker">
             <input onInput="draw_width = this.value"type="range" min="1" max="100" class="pen-range">
+            <button onClick="reset_draw_width()" type="button" class="button" id= "resetB">reset brush</button>
+            <select onClick="change_crosshair()" class = "button" name="cursor_list" id="preview_cursor_list">
+                <option value="crosshair">crosshair</option>
+                <option value="circle">circle</option>
+                <option value="circle_and_dot">circle & dot</option>
+            </select>
+            <div id="preview_cursor_img"></div>
         </div>
     </div>
 </body>
