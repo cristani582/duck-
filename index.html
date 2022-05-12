@@ -8,6 +8,26 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="wrapper">
+          <div class="content">
+            <img src="./icons/duck_icon_ramake.png" class="logo">
+            <div class="right-thi">
+              <div class="btns-nav">
+                <select onClick="change_crosshair()" class = "button" name="cursor_list" id="preview_cursor_list">
+                    <option value="crosshair">crosshair</option>
+                    <option value="circle">circle</option>
+                    <option value="circle_and_dot">circle & dot</option>
+                </select>
+                <div id="preview_cursor_img"></div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+
     <div class="field">
         <canvas id="canvas"></canvas>
         <div class="toolbox">
@@ -22,14 +42,8 @@
             <input onInput="draw_color = this.value" type="color" class="color-picker">
             <input onInput="draw_width = this.value"type="range" min="1" max="100" class="pen-range">
             <button onClick="reset_draw_width()" type="button" class="button" id= "resetB">reset brush</button>
-            <select onClick="change_crosshair()" class = "button" name="cursor_list" id="preview_cursor_list">
-                <option value="crosshair">crosshair</option>
-                <option value="circle">circle</option>
-                <option value="circle_and_dot">circle & dot</option>
-            </select>
-            <div id="preview_cursor_img"></div>
         </div>
-    </div>
+    
 </body>
 <script src="script.js"></script>
 </html>
